@@ -1,0 +1,21 @@
+{
+  "name": "@monolith",
+  "version": "1.0.0",
+  "description": "a boilerplate for creating a single container set of microservices with npm monorepos, turborepo, pm2 and docker",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alecsavvy/npmonolith.git"
+  },
+  "keywords": [],
+  "author": "alecjsavvy@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alecsavvy/npmonolith/issues"
+  },
+  "homepage": "https://github.com/alecsavvy/npmonolith#readme",
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ]
+}
