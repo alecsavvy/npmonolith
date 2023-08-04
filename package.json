@@ -26,7 +26,8 @@
   "homepage": "https://github.com/alecsavvy/npmonolith#readme",
   "workspaces": [
     "apps/*",
-    "libs/*"
+    "libs/*",
+    "tools/*"
   ],
   "devDependencies": {
     "@types/node": "^20.4.7",
