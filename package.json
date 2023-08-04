@@ -19,6 +19,7 @@
     "libs/*"
   ],
   "devDependencies": {
-    "@types/node": "^20.4.7"
+    "@types/node": "^20.4.7",
+    "typescript": "^5.1.6"
   }
 }
