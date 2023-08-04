@@ -16,7 +16,7 @@
     ]
   },
   "scripts": {
-    "dev": "npx ts-node-dev --respawn ./src/index.ts",
+    "dev": "tsup --watch",
     "build": "tsup"
   },
   "keywords": [],
