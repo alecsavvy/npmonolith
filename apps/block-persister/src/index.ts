@@ -11,12 +11,16 @@ export const main = async () => {
     await migrations(db)
     console.log('ran db migrations')
     while (true) {
-        const blockNumber = await web3.getBlockNumber()
-        const { hash, number } = await web3.getBlock(blockNumber)
-        console.log(`retrieved new block ${number}`)
-        await insertBlock(db, { blockNumber: number, blockHash: hash })
-        console.log(`persisted new block ${number}`)
-        await delay({ seconds: 2 })
+        try {
+            const blockNumber = await web3.getBlockNumber()
+            const { hash, number } = await web3.getBlock(blockNumber)
+            console.log(`retrieved new block ${number}`)
+            await insertBlock(db, { blockNumber: number, blockHash: hash })
+            console.log(`persisted new block ${number}`)
+            await delay({ seconds: 2 })
+        } catch (e) {
+            console.error(e)
+        }
     }
 }
 
