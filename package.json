@@ -7,6 +7,13 @@
     "type": "git",
     "url": "git+https://github.com/alecsavvy/npmonolith.git"
   },
+  "scripts": {
+    "dev": "concurrently \"npm:dev:config\" \"npm:dev:database\" \"npm:dev:block-persister\" \"npm:dev:block-reader\"",
+    "dev:config": "npm run dev -w @monolith/config",
+    "dev:database": "npm run dev -w @monolith/database",
+    "dev:block-persister": "npm run dev -w @monolith/block-persister",
+    "dev:block-reader": "npm run dev -w @monolith/block-reader"
+  },
   "keywords": [],
   "author": "alecjsavvy@gmail.com",
   "license": "ISC",
@@ -20,6 +27,7 @@
   ],
   "devDependencies": {
     "@types/node": "^20.4.7",
+    "concurrently": "^8.2.0",
     "typescript": "^5.1.6"
   }
 }
