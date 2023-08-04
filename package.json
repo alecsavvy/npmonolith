@@ -17,5 +17,8 @@
   "workspaces": [
     "apps/*",
     "libs/*"
-  ]
+  ],
+  "devDependencies": {
+    "@types/node": "^20.4.7"
+  }
 }
