@@ -8,9 +8,12 @@
     "url": "git+https://github.com/alecsavvy/npmonolith.git"
   },
   "scripts": {
-    "up": "pm2 start ecosystem.config.js",
+    "up": "npm run docker:up && pm2 start ecosystem.config.cjs",
     "monitor": "pm2 monit",
-    "down": "pm2 stop all --watch",
+    "logs": "pm2 logs",
+    "down": "pm2 stop all --watch && npm run docker:down",
+    "docker:up": "cd ./docker && docker compose up -d",
+    "docker:down": "cd ./docker && docker compose down",
     "dev": "concurrently \"npm:dev:config\" \"npm:dev:database\" \"npm:dev:block-persister\" \"npm:dev:block-reader\"",
     "dev:config": "npm run dev -w @monolith/config",
     "dev:database": "npm run dev -w @monolith/database",
@@ -32,6 +35,8 @@
   "devDependencies": {
     "@types/node": "^20.4.7",
     "concurrently": "^8.2.0",
+    "dotenv": "^16.3.1",
+    "path": "^0.12.7",
     "pm2": "^5.3.0",
     "typescript": "^5.1.6"
   }

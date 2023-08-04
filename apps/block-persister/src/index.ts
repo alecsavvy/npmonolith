@@ -1,5 +1,5 @@
 import { readConfig } from "@monolith/config";
-import { insertBlock, instantiateDb } from "@monolith/database"
+import { insertBlock, instantiateDb, migrations } from "@monolith/database"
 import { ethers } from "ethers";
 
 export const main = async () => {
@@ -8,6 +8,8 @@ export const main = async () => {
     const web3 = new ethers.providers.JsonRpcProvider(rpcUrl);
     const db = instantiateDb(databaseUrl)
     console.log(`connected to web3 and db`)
+    await migrations(db)
+    console.log('ran db migrations')
     while (true) {
         const blockNumber = await web3.getBlockNumber()
         const { hash, number } = await web3.getBlock(blockNumber)

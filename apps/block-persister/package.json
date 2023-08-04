@@ -25,6 +25,7 @@
   "dependencies": {
     "@monolith/config": "^1.0.0",
     "@monolith/database": "^1.0.0",
-    "ethers": "^5.7.2"
+    "ethers": "^5.7.2",
+    "pg": "^8.11.2"
   }
 }
