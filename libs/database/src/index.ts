@@ -16,7 +16,7 @@ export const migrations = async (db: Knex) => {
     // TODO: create table if not exists
 }
 
-export const insertBlock = async (db: Knex): Promise<Block> => {
+export const insertBlock = async (db: Knex, block: Block): Promise<Block> => {
     throw new Error("not implemented")
 }
 
