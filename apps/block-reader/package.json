@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@monolith/config": "^1.0.0",
+    "@monolith/database": "^1.0.0",
+    "fastify": "^4.21.0"
+  }
 }
